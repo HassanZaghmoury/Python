@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Home page</title>
+</head>
+<body>
+    {% if messages %}
+<ul class="messages">
+    {% for message in messages %}
+    <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+    {% endfor %}
+</ul>
+{% endif %}
+<h1>Users</h1>
+<a href="/create">Add a new user</a>
+<!-- !!!!! -->
+{% for person in auser %} 
+<!-- stuff!!!!!!!!!! -->
+
+<div>
+    <a href="/semi_restful/{{auser.id}}/show"><h2>show {{auser.first_name}}</h2></a>
+    <a href="/semi_restful/{{auser.id}}/edit">Edit</a>
+    <a href="/semi_restful/{{auser.id}}/delete">delete</a>
+</div>
+{% endfor %}
+</body>
+</html>

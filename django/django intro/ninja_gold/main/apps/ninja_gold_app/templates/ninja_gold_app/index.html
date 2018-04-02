@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+        <p>Your gold:  {{ request.session.total }}</p>
+        <form action="restart">
+                <ul>
+                        {% csrf_token %} 
+                            <input type="submit" value="restart game">
+                </ul>
+            </form>
+
+
+<form action="/create" method="post">
+    {% csrf_token %}
+    <h3>farm</h3>
+   <p>(earns 10-20 golds)</p>
+   <input type="hidden" name="location" value ="farm">
+<input type="submit" value="find gold">
+</form>
+
+<form action="/create" method="post">
+    {% csrf_token %}
+    <h3>cave</h3>
+   <p>(earns 5-10 golds)</p>
+   <input type="hidden" name="location" value ="cave">
+<input type="submit" value="find gold">
+</form>
+
+<form action="/create" method="post">
+    {% csrf_token %}
+    <h3>house</h3>
+   <p>(earns 2-5 golds)</p>
+   <input type="hidden" name="location" value ="house">
+<input type="submit" value="find gold">
+</form>
+
+<form action="/create" method="post">
+    {% csrf_token %}
+    <h3>Casino bet</h3>
+   <p>(earns 0-50 golds)</p>
+   <input type="hidden" name="location" value ="casino">
+<input type="submit" value="find gold">
+</form>
+
+
+<h3>Activites:</h3><br>
+{% for message in request.session.log %}
+<p>{{ message }}</p><br>
+{% endfor %}
+
+
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h3>All items</h3>
+    <form action="delete">
+        <ul>
+                {% csrf_token %} 
+
+                {% for aditem in item_info %}
+                    <li>{{login_names.first_name}} {{ aditem.aditem }}</li>
+                    <input type="submit" value="remove item">
+                {% endfor %}
+        </ul>
+    </form>
+    <h3>Your items</h3>
+    <form action="delete">
+        <ul>
+                {% csrf_token %} 
+
+                {% for aditem in item_info %}
+                    <li>{{login_names.first_name}} {{ aditem.aditem }}</li>
+                    <input type="submit" value="remove item">
+                {% endfor %}
+        </ul>
+    </form>
+
+
+        <p>{{login_names.first_name}} {{login_names.last_name}}</p>
+        <p>{{login_names.email}}</p>
+        <form action="/logout">
+        <input type="submit" value="logout" name="logout">
+        </form>
+    
+<a href=""></a>
+
+      <form action='/aditem' method='POST'>
+        {% csrf_token %} 
+        <label for="aditem"></label> <textarea name="aditem">add item</textarea>
+        <input type="submit" value="additem">
+      </form>
+</body>
+</html>

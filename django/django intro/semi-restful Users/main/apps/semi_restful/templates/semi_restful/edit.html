@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Edit</title>
+</head>
+<body>
+    <h1>Now editing {{auser.first_name}}</h1>
+<form action="/create/{{auser.id}}/update" method="post">
+    {% csrf_token %}
+    <label for="first_name">first Name:</label>
+    <input type="text" name="first_name" value="{{auser.first_name}}">
+    <label for="last_name">last name:</label>
+    <input type="text" name="last_name" value="{{auser.last_name}}">
+    <label for="email">email:</label>
+    <input type="email" name="email" value="{{auser.email}}">
+    <input type="submit" value="Update">
+</form>
+
+<a href="/">go back</a>
+
+</body>
+</html>

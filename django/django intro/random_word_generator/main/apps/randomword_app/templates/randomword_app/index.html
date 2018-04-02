@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+        <form action="/">
+         <p>random word generator {{ random }}</p>
+     <input type="submit" value="generate random word">
+</form>
+
+    <form action="delete">
+        <ul>
+                {% csrf_token %} 
+                <p>counter # {{ request.session.counter }}</p>
+                    <input type="submit" value="reset counter">
+        </ul>
+    </form>
+</body>
+</html>

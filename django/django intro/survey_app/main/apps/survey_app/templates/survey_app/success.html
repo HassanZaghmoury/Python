@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+    <br>
+        <p>thanks for submitting this form! You have submiited this
+            form  {{ request.session.counter }} times now</p>
+    <br>
+<h3>Submitted information</h3>
+    <p>Name: {{ request.session.name }}</p>
+    <p>Dojo location {{ request.session.location }}</p><br>
+    <p>Favorite language {{ request.session.language }}</p>
+    <p>comment {{ request.session.comment }}</p><br>
+
+            <a href="/"> go home</a>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Now editing your item </h1>
+    <form action="/{{useredit.id}}/update" method="post">
+        {% csrf_token %}
+        <label for="aditem"></label> <textarea name="aditem">add item</textarea>
+        <input type="text" name="first_name" value="{{useredit.aditem}}">
+        <br>
+        <br>
+
+
+        <input type="submit" value="Update">
+</body>
+</html>

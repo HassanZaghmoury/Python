@@ -1,0 +1,43 @@
+<html>
+<head>
+  <title>login</title>
+</head>
+<body>
+<h1>Login and Registration</h1>
+<!-- {{error}} -->
+{% with messages = get_flashed_messages() %}
+    {% if messages %}
+      {% for message in messages %}
+        <p>{{message}}</p>
+      {% endfor %}
+    {% endif %}
+  {% endwith %}
+<h1>All Users</h1>
+{% for user in all_users: %}
+   <p>ID: {{ user['id'] }}</p>
+   <p>First Name: {{ user['first_name'] }}</p>
+   <p>Last Name: {{ user['last_name'] }}</p>
+   <p>email: {{ user['email'] }}</p>
+   <!-- <p>Password: {{ user['password'] }}</p> -->
+   <!-- <p>Password Confirmation: {{ user['password_confirmation'] }}</p> -->
+   
+   <hr>
+{% endfor %}
+
+  <h2>Registration</h2>
+  <form action='/users' method='POST'>
+    <label for="first_name">First Name:<input type="text" name="first_name" id="first_name"></label>
+    <label for="last_name">Last Name:<input type="text" name="last_name" id="last_name"></label>
+    <label for="email">Email:<input type="text" name="email" id="email"></label>
+    <label for="password">Password:<input type="password" name="password" id="password"></label>
+    <label for="password_confirmation">Password Confirmation:<input type="password" name="password_confirmation" id="password_confirmation"></label>
+    <input type="submit" value="Add">
+  </form>
+  <form action="/login" method='POST'>
+      <label for="email">Email:<input type="text" name="email" id="password"></label>
+      <label for="password">Password:<input type="password" name="password" id="password"></label>
+      <input type="submit" value="Login">
+  </form>
+</body>
+</html>
+

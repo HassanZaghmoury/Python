@@ -1,0 +1,16 @@
+get all of the users
+SELECT * 
+FROM users;
+
+get the first names of all of the users
+SELECT first_name 
+FROM users;
+
+first and last names of all of the users
+SELECT first_name, last_name
+FROM users;
+
+
+
+
+
